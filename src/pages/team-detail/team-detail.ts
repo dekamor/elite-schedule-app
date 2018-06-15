@@ -11,6 +11,7 @@ import { GamePage } from '../game/game';
 })
 export class TeamDetailPage {
   public team: any = {};
+  public teamStanding: any = {};
   public games: any[];
   private tourneyData: any;
 
@@ -40,6 +41,8 @@ export class TeamDetailPage {
                     };
                   })
                   .value();
+    
+    this.teamStanding = _.find(this.tourneyData.standings, {'teamId': this.team.id});``
   }
 
   getScoreDisplay(isTeam1, team1Score, team2Score){
